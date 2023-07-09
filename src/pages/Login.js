@@ -49,9 +49,9 @@ function Login() {
     <div className="App">
       <h1>Log In</h1>
       <form onSubmit={loginUser}>
-        <input type="email" placeholder="Email" value={email} onChange={(e)=>setEmail(e.target.value)}/>
+        <input required type="email" placeholder="Email" value={email} onChange={(e)=>setEmail(e.target.value)}/>
         <br/>
-        <input type="password" placeholder="Password" value={password} onChange={(e)=>setPassword(e.target.value)}/>
+        <input required type="password" placeholder="Password" value={password} onChange={(e)=>setPassword(e.target.value)}/>
         <br/>
         <p>Don't have an account yet? <Link to={'/register'}>Register</Link></p>
         <input type="submit" value="Log In"/>

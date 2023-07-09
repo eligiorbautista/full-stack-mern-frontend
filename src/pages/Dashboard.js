@@ -81,6 +81,7 @@ function Dashboard() {
         </form>
         <input type="button" value="Log Out" onClick={logout}/>
         <br/>
+        <br/>
         <small><i>Created by Eli Bautista.</i></small>
     </div>
     );

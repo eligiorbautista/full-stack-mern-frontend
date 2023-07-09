@@ -38,11 +38,11 @@ function Register() {
     <div className="App">
       <h1>Register</h1>
       <form onSubmit={registerUser}>
-        <input type="text" placeholder="Name" value={name} onChange={(e)=>setName(e.target.value)}/>
+        <input required type="text" placeholder="Name" value={name} onChange={(e)=>setName(e.target.value)}/>
         <br/>
-        <input type="email" placeholder="Email" value={email} onChange={(e)=>setEmail(e.target.value)}/>
+        <input required type="email" placeholder="Email" value={email} onChange={(e)=>setEmail(e.target.value)}/>
         <br/>
-        <input type="password" placeholder="Password" value={password} onChange={(e)=>setPassword(e.target.value)}/>
+        <input required type="password" placeholder="Password" value={password} onChange={(e)=>setPassword(e.target.value)}/>
         <br/>
         <p>Already have an account? <Link to={'/'}>Log In</Link></p>
         <input type="submit" value="Register"/>
