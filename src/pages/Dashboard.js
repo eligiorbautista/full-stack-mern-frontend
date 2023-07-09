@@ -58,7 +58,7 @@ function Dashboard() {
             const user = decodeToken(token);
             if (!user) {
                 localStorage.removeItem('token');
-                navigate('/login');
+                navigate('/');
             } else {
                 populateQuote();
             }
