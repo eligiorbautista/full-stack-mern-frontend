@@ -19,7 +19,7 @@ function Login() {
     })
 
 
-    const data = await response.json(); // convert response data to json
+    const data = await response.json(); 
     if (data.user) {
 
       localStorage.setItem('token', data.user);
