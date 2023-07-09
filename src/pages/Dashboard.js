@@ -9,7 +9,8 @@ function Dashboard() {
     const [ quote, setQuote] = useState('');
     const [ name, setName ] = useState('');
 
-    async function updateQuote () {
+    async function updateQuote (event) {
+        event.preventDefault();
         const req = await fetch('https://full-stack-mern-api.onrender.com/api/quote', {
             method : 'POST',
             headers : {
@@ -73,12 +74,12 @@ function Dashboard() {
         <h2>Welcome, {name}</h2>
         <h3>Your quote: {quote || 'No quote found.' } </h3>
         <form onSubmit={updateQuote}>
-        <input type="text" placeholder="Enter a quote" value={tempQuote} onChange={(e)=>setTempQuote(e.target.value)}/>
-        <input type="submit" value="Update Quote"/>
-        <br/>
-        <br/>
-        <input type="button" value="Log Out" onClick={logout}/>
+            <input type="text" placeholder="Enter a quote" value={tempQuote} onChange={(e)=>setTempQuote(e.target.value)}/>
+            <input type="submit" value="Update Quote"/>
+            <br/>
+            <br/>
         </form>
+        <input type="button" value="Log Out" onClick={logout}/>
         <br/>
         <small><i>Created by Eli Bautista.</i></small>
     </div>
