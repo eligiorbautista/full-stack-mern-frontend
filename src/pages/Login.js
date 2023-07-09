@@ -27,7 +27,7 @@ function Login() {
   
         localStorage.setItem('token', data.user);
   
-        alert('Login successful');
+        //alert('Login successful ✔');
         console.log('Login successful ✔');
         navigate('/dashboard');
         //window.location.href = '/dashboard';
