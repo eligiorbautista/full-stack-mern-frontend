@@ -24,8 +24,8 @@ function Dashboard() {
 
         const data = await req.json();
         if (data.status === 'ok') {
+            setQuote(tempQuote);
             setTempQuote('');
-            setQuote(data.quote);
         } else {
             alert(data.error);
         }
@@ -66,7 +66,7 @@ function Dashboard() {
              
         }
 
-    }, [])
+    }, []);
 
 
     return (
