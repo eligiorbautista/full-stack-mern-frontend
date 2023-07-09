@@ -9,32 +9,37 @@ function Login() {
 
   async function loginUser(event) {
     event.preventDefault();
-    const response = await fetch('https://full-stack-mern-api.onrender.com/api/login', {
-      method : 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({ 
-        email, 
-        password, 
-      }),
-    })
-
-
-    const data = await response.json(); 
-    if (data.user) {
-
-      localStorage.setItem('token', data.user);
-
-      alert('Login successful');
-      console.log('Login successful ✔');
-      window.location.href = '/dashboard';
-    } 
-    else {
-      alert('Invalid email / password ✘\nPlease check your email and password and try again.')
-      setEmail('');
-      setPassword('');
+    try {
+      const response = await fetch('https://full-stack-mern-api.onrender.com/api/login', {
+        method : 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({ 
+          email, 
+          password, 
+        }),
+      })
+  
+  
+      const data = await response.json(); 
+      if (data.user) {
+  
+        localStorage.setItem('token', data.user);
+  
+        alert('Login successful');
+        console.log('Login successful ✔');
+        window.location.href = '/dashboard';
+         
+      } 
+      else {
+        alert('Invalid email / password ✘\nPlease check your email and password and try again.')
+        setEmail('');
+        setPassword('');
+      }
+  
+      console.log(data);
+    } catch (error) {
+      console.log(error);
     }
-
-    console.log(data);
   }
 
   return (
